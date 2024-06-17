@@ -1,0 +1,32 @@
+{
+  "name": "hackaton-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.20",
+    "again": "^0.0.1",
+    "css": "^3.0.0",
+    "formik": "^2.4.6",
+    "next": "^14.2.4",
+    "phosphor-react": "^1.4.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router-dom": "^6.23.1",
+    "sass": "^1.77.5",
+    "tailwind": "^4.0.0",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4"
+  }
+}
