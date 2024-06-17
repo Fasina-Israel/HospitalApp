@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Box } from '@mui/material';
 import { Formik, Field } from 'formik';
 import validator from 'validator';
+import axios from 'axios';
 
 
 const register = () => {
@@ -20,57 +21,69 @@ const register = () => {
     // };
     const [loading, setLoading] = useState(false);
 
+    const handleSubmit = () => {
+
+    }
+
     const submit = useCallback(async (values) => {
         const details = {
-            firstname: values.firstname,
-            lastname: values.lastname,
-            email: values.email,
-            password: values.password,
-            role: values.role,
-            specialization: values.specialization,
-            mfaEnabled: values.mfaEnabled,
-            availability: values.availability
+            // firstname: values.firstname,
+            // lastname: values.lastname,
+            // email: values.email,
+            // password: values.password,
+            // role: values.role,
+            // specialization: values.specialization,
+            // mfaEnabled: values.mfaEnabled,
+            // availability: values.availability
+
+
+
+            firstname: "John",
+            lastname: "Oladeji",
+            email: "doctor9@gmail.com",
+            password: "Abolael1234",
+            //"mfaEnabled": "false",
+            role: "DOCTOR",
+            specialization: "gynecologist",
+            // availability: {
+            //     "Monday": "9:10-17:00"
+            // }
 
         };
-        try {
-            setLoading(true);
-            console.log(details, 'details');
-            const response = await fetch('https://1a8f-105-113-106-168.ngrok-free.app/api/v1/auth/register', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                mode: 'no-cors',
-                body: JSON.stringify(details)
-            });
-            console.log(response, 'response');
-            setLoading(false);
-            if (response.ok) {
-                // navigate('/verify', { state: details });
-            } else {
-                const data = await response.json();
-                // notify(data.message, true);
-                // setLoading(false);
+        axios({
+            method: 'post', //you can set what request you want to be
+            url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
+            data: {
+                firstname: "John",
+                lastname: "Oladeji",
+                email: "doctor9@gmail.com",
+                password: "Abolael1234",
+                //"mfaEnabled": "false",
+                role: "DOCTOR",
+                specialization: "gynecologist",
+                // availability: {
+                //     "Monday": "9:10-17:00"
+                // }
+            },
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
             }
-        } catch (err) {
-            console.log(err, 'err');
-            // notify(err.message, true);
-            // setLoading(false);
-        }
+        })
     }, []);
 
     return (<Formik
         initialValues={{
-            firstname: '',
-            lastname: '',
-            email: '',
-            password: '',
-            role: '',
-            specialization: '',
-            availability: {
-                'Monday': '9:10-17:00'
-            },
-            mfaEnabled: 'false'
+            firstname: "John",
+            lastname: "Oladeji",
+            email: "doctor9@gmail.com",
+            password: "Abolael1234",
+            //"mfaEnabled": "false",
+            role: "DOCTOR",
+            specialization: "gynecologist",
+            // availability: {
+            //     "Monday": "9:10-17:00"
+            // }
         }}
 
         validate={(values) => {

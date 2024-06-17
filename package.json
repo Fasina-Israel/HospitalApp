@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.20",
     "again": "^0.0.1",
+    "axios": "^1.7.2",
     "css": "^3.0.0",
     "formik": "^2.4.6",
     "next": "^14.2.4",
