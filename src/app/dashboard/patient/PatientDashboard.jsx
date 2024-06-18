@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Box, Text, Stack, IconButton } from '@mui/material'
-import { Outlet } from 'react-router-dom'
+// import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
 import PatientOutlet from './PatientOutlet';

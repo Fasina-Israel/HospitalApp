@@ -1,12 +1,7 @@
 "use client";
-
-import { Outlet } from 'react-router-dom'
-import { useTheme } from '@mui/material/styles';
-import { Nav_Buttons } from '../../data';
-import { getAllDoctor } from '@/app/api/api';
 import { Typography, Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 
 const DoctorDashboard = () => {
 
@@ -28,13 +23,13 @@ const DoctorDashboard = () => {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            // .then((response) => response.json())
-            // .then((response) => {
-            //     console.log("data", response);
-            //     setDoctors(response);
-            // });
-            // const data = await response.json();
-            // console.log(data, 'data')
+            .then((response) => response.json())
+            .then((response) => {
+                console.log("data", response);
+                setDoctors(response);
+            });
+            const data = await response.json();
+            console.log(data, 'data')
             console.log(response, 'res')
         } catch (err) {
             console.log(err);

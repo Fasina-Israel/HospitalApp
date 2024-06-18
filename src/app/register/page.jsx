@@ -4,7 +4,7 @@ import styles from './register.module.scss'
 import { useState, useCallback } from 'react';
 import { Button, Box } from '@mui/material';
 import { Formik, Field } from 'formik';
-import validator from 'validator';
+// import validator from 'validator';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
