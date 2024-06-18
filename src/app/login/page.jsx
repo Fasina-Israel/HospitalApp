@@ -2,15 +2,17 @@
 import React from 'react'
 import styles from './login.module.scss'
 import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation'
 import { Button, Box } from '@mui/material';
 import { Formik, Field } from 'formik';
 import validator from 'validator';
+import axios from 'axios';
 
 
 const login = () => {
 
     const [loading, setLoading] = useState(false);
+    const router = useRouter()
 
     const submit = useCallback(async (values) => {
         const details = {
@@ -20,18 +22,36 @@ const login = () => {
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await fetch('http://localhost:8080/users/create', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                // mode: 'no-cors',
-                body: JSON.stringify(details)
-            });
+            const response = await axios.post('https://1d14-102-88-69-152.ngrok-free.app/api/v1/auth/authenticate', details, {
+                "Content-Type": "application/json",
+                // withCredentials: false
+            },);
             console.log(response, 'response');
             setLoading(false);
-            if (response.ok) {
-                // navigate('/verify', { state: details });
+            if (response.data.accessToken) {
+                console.log('token present')
+                const authObj = {
+                    email: response.data.email,
+                    name: response.data.name,
+                    roles: response.data.role,
+                    id: response.data.userId,
+                    firstName: response.data.firstName
+                };
+                // console.log(res.data.roles[0], 'driverRoles');
+                const authObjString = JSON.stringify(authObj);
+                console.log(authObjString, 'authObj');
+                let token = response.data.accessToken;
+                console.log(token, 'token');
+                //   await AsyncStorage.setItem("authObj", authObjString);
+                //   await AsyncStorage.setItem("token", token);
+                window.sessionStorage.setItem('auth', JSON.stringify(authObj));
+                window.sessionStorage.setItem('token', JSON.stringify(token));
+                const auth = JSON.parse(window.sessionStorage.getItem('auth'));
+                console.log(auth, 'auth');
+                if (auth.roles === "DOCTOR") {
+                    router.push('/dashboard/user');
+                }
+
             } else {
                 const data = await response.json();
                 // notify(data.message, true);
@@ -47,8 +67,8 @@ const login = () => {
     return (
         <Formik
             initialValues={{
-                email: '',
-                password: '',
+                email: "",
+                password: "",
             }}
 
             validate={(values) => {

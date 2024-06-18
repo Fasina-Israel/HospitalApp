@@ -38,39 +38,8 @@ const register = () => {
 
 
 
-            // firstname: "John",
-            // lastname: "Oladeji",
-            // email: "doctor9@gmail.com",
-            // password: "Abolael1234",
-            // //"mfaEnabled": "false",
-            // role: "DOCTOR",
-            // specialization: "gynecologist",
-            // // availability: {
-            // //     "Monday": "9:10-17:00"
-            // // }
-
         };
-        //     axios({
-        //         method: 'post', //you can set what request you want to be
-        //         url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
-        //         data: {
-        //             firstname: "John",
-        //             lastname: "Oladeji",
-        //             email: "doctor9@gmail.com",
-        //             password: "Abolael1234",
-        //             //"mfaEnabled": "false",
-        //             role: "DOCTOR",
-        //             specialization: "gynecologist",
-        //             // availability: {
-        //             //     "Monday": "9:10-17:00"
-        //             // }
-        //         },
-        //         mode: 'no-cors',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     })
-        // }, []);
+      
 
         try {
             setLoading(true);
