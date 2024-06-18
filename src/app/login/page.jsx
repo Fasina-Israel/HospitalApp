@@ -9,7 +9,7 @@ import validator from 'validator';
 import axios from 'axios';
 
 
-const login = () => {
+const Login = () => {
 
     const [loading, setLoading] = useState(false);
     const router = useRouter()
@@ -171,4 +171,4 @@ const login = () => {
             )}
         </Formik >);
 }
-export default login;
+export default Login;

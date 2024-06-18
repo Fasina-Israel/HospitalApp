@@ -2,7 +2,6 @@
 import React from 'react'
 import styles from './register.module.scss'
 import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, Box } from '@mui/material';
 import { Formik, Field } from 'formik';
 import validator from 'validator';
@@ -10,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
 
-const register = () => {
+const Register = () => {
     // const navigate = useNavigate();
     const [visible, setVisible] = useState(false);
     // const togglePasswordVisibility = () => {
@@ -337,4 +336,4 @@ const register = () => {
     )
 }
 
-export default register;
+export default Register;
