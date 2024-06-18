@@ -50,39 +50,37 @@ const register = () => {
             // // }
 
         };
-    //     axios({
-    //         method: 'post', //you can set what request you want to be
-    //         url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
-    //         data: {
-    //             firstname: "John",
-    //             lastname: "Oladeji",
-    //             email: "doctor9@gmail.com",
-    //             password: "Abolael1234",
-    //             //"mfaEnabled": "false",
-    //             role: "DOCTOR",
-    //             specialization: "gynecologist",
-    //             // availability: {
-    //             //     "Monday": "9:10-17:00"
-    //             // }
-    //         },
-    //         mode: 'no-cors',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    // }, []);
+        //     axios({
+        //         method: 'post', //you can set what request you want to be
+        //         url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
+        //         data: {
+        //             firstname: "John",
+        //             lastname: "Oladeji",
+        //             email: "doctor9@gmail.com",
+        //             password: "Abolael1234",
+        //             //"mfaEnabled": "false",
+        //             role: "DOCTOR",
+        //             specialization: "gynecologist",
+        //             // availability: {
+        //             //     "Monday": "9:10-17:00"
+        //             // }
+        //         },
+        //         mode: 'no-cors',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         }
+        //     })
+        // }, []);
 
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await fetch('http://localhost:8080/users/create', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                // mode: 'no-cors',
-                body: JSON.stringify(details)
-            });
+            const response = await axios.post('https://1d14-102-88-69-152.ngrok-free.app/api/v1/auth/register', details, {
+                "Content-Type": "application/json",
+                // withCredentials: false
+            },
+
+            );
             console.log(response, 'response');
             setLoading(false);
             if (response.ok) {
