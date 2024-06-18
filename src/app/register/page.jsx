@@ -27,73 +27,100 @@ const register = () => {
 
     const submit = useCallback(async (values) => {
         const details = {
-            // firstname: values.firstname,
-            // lastname: values.lastname,
-            // email: values.email,
-            // password: values.password,
-            // role: values.role,
-            // specialization: values.specialization,
-            // mfaEnabled: values.mfaEnabled,
-            // availability: values.availability
+            firstname: values.firstname,
+            lastname: values.lastname,
+            email: values.email,
+            password: values.password,
+            role: values.role,
+            specialization: values.specialization,
+            mfaEnabled: values.mfaEnabled,
+            availability: values.availability
 
 
 
-            firstname: "John",
-            lastname: "Oladeji",
-            email: "doctor9@gmail.com",
-            password: "Abolael1234",
-            //"mfaEnabled": "false",
-            role: "DOCTOR",
-            specialization: "gynecologist",
-            // availability: {
-            //     "Monday": "9:10-17:00"
-            // }
+            // firstname: "John",
+            // lastname: "Oladeji",
+            // email: "doctor9@gmail.com",
+            // password: "Abolael1234",
+            // //"mfaEnabled": "false",
+            // role: "DOCTOR",
+            // specialization: "gynecologist",
+            // // availability: {
+            // //     "Monday": "9:10-17:00"
+            // // }
 
         };
-        axios({
-            method: 'post', //you can set what request you want to be
-            url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
-            data: {
-                firstname: "John",
-                lastname: "Oladeji",
-                email: "doctor9@gmail.com",
-                password: "Abolael1234",
-                //"mfaEnabled": "false",
-                role: "DOCTOR",
-                specialization: "gynecologist",
-                // availability: {
-                //     "Monday": "9:10-17:00"
-                // }
-            },
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json'
+    //     axios({
+    //         method: 'post', //you can set what request you want to be
+    //         url: 'https://11ae-105-113-94-204.ngrok-free.app/walletReport',
+    //         data: {
+    //             firstname: "John",
+    //             lastname: "Oladeji",
+    //             email: "doctor9@gmail.com",
+    //             password: "Abolael1234",
+    //             //"mfaEnabled": "false",
+    //             role: "DOCTOR",
+    //             specialization: "gynecologist",
+    //             // availability: {
+    //             //     "Monday": "9:10-17:00"
+    //             // }
+    //         },
+    //         mode: 'no-cors',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    // }, []);
+
+        try {
+            setLoading(true);
+            console.log(details, 'details');
+            const response = await fetch('http://localhost:8080/users/create', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                // mode: 'no-cors',
+                body: JSON.stringify(details)
+            });
+            console.log(response, 'response');
+            setLoading(false);
+            if (response.ok) {
+                // navigate('/verify', { state: details });
+            } else {
+                const data = await response.json();
+                // notify(data.message, true);
+                // setLoading(false);
             }
-        })
+        } catch (err) {
+            console.log(err, 'err');
+            // notify(err.message, true);
+            // setLoading(false);
+        }
     }, []);
 
     return (<Formik
         initialValues={{
-            firstname: "John",
-            lastname: "Oladeji",
-            email: "doctor9@gmail.com",
-            password: "Abolael1234",
-            //"mfaEnabled": "false",
-            role: "DOCTOR",
-            specialization: "gynecologist",
-            // availability: {
-            //     "Monday": "9:10-17:00"
-            // }
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: "",
+            // "mfaEnabled": "false",
+            role: "",
+            specialization: "",
+            availability: {
+                "Monday": "9:10-17:00"
+            }
         }}
 
         validate={(values) => {
             const errors = {};
-            // if (!values.firstname) {
-            //     errors.firstname = 'Company Name cannot be empty !';
-            // }
-            // if (!values.email) {
-            //     errors.email = 'Email cannot be empty !';
-            // }
+            if (!values.firstname) {
+                errors.firstname = 'Company Name cannot be empty !';
+            }
+            if (!values.email) {
+                errors.email = 'Email cannot be empty !';
+            }
             // } else if (!validator.isEmail(values.email)) {
             //     errors.email = 'Please enter a valid email !';
             // }
