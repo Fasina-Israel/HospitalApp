@@ -49,7 +49,12 @@ const login = () => {
                 const auth = JSON.parse(window.sessionStorage.getItem('auth'));
                 console.log(auth, 'auth');
                 if (auth.roles === "DOCTOR") {
-                    router.push('/dashboard/user');
+                    router.push('/dashboard/doctor');
+                } else if (auth.roles === "PATIENT") {
+                    router.push('/dashboard/patient');
+                    // Alert.alert("", "Invalid Email or Password");
+                } else {
+                    alert('', 'Invalid Email or Password');
                 }
 
             } else {

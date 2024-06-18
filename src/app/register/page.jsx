@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Box } from '@mui/material';
 import { Formik, Field } from 'formik';
 import validator from 'validator';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
 
@@ -15,6 +16,7 @@ const register = () => {
     // const togglePasswordVisibility = () => {
     //     setVisible(!visible);
     // };
+    const router = useRouter();
     const [checked, setChecked] = useState(false);
     // const handleTermsChange = () => {
     //     setChecked(!checked);
@@ -39,7 +41,7 @@ const register = () => {
 
 
         };
-      
+
 
         try {
             setLoading(true);
@@ -52,8 +54,8 @@ const register = () => {
             );
             console.log(response, 'response');
             setLoading(false);
-            if (response.ok) {
-                // navigate('/verify', { state: details });
+            if (response.status === 200 || response.status === 201 || response.status === 202) {
+                router.push('/login');
             } else {
                 const data = await response.json();
                 // notify(data.message, true);
@@ -73,7 +75,7 @@ const register = () => {
             email: "",
             password: "",
             // "mfaEnabled": "false",
-            role: "",
+            role: "DOCTOR",
             specialization: "",
             availability: {
                 "Monday": "9:10-17:00"
@@ -200,7 +202,7 @@ const register = () => {
                                     </h4>
                                 </div>
                                 <div className={styles.input}>
-                                    <Field
+                                    {/* <Field
                                         className={styles.input}
                                         id="role"
                                         type="text"
@@ -208,7 +210,12 @@ const register = () => {
                                         value={values.role}
                                         onBlur={handleBlur}
                                         placeholder="Enter your role"
-                                    />
+                                    /> */}
+                                    <Field as="select" name="role">
+                                        <option value="DOCTOR">Doctor</option>
+                                        <option value="PATIENT">Patient</option>
+                                    </Field>
+
                                 </div>
                             </div>
                             <div className={styles.formField}>

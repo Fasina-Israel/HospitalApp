@@ -1,0 +1,54 @@
+import { getAllDoctor } from '@/app/api/api';
+import { Typography, Box } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
+const PatientOutlet = () => {
+
+    const [updater, setUpdater] = useState(null);
+    const [doctors, setDoctors] = useState([]);
+
+    const getAllDoctors = async () => {
+        const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+        console.log(parsedObj, 'pObj')
+        const token = JSON.parse(window.sessionStorage.getItem('token'));
+        console.log(token, 'token')
+        try {
+
+            const response = await axios.get(getAllDoctor, {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+                // withCredentials: false
+
+            },
+            )
+            const data = await response.json();
+            console.log(data, 'data')
+            console.log(response, 'response')
+
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        getAllDoctors();
+    }, [updater]);
+    return (
+        <Box sx={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#fff',
+            justifyContent: 'flexStart',
+            alignItems: 'center'
+        }}>
+            <Typography>
+                Patient Dashboard
+            </Typography>
+
+        </Box>
+    )
+}
+
+export default PatientOutlet

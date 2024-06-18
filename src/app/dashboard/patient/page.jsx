@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from './PatentDashboard';
+import Dashboard from './PatientDashboard';
 
 const page = () => {
   return (
