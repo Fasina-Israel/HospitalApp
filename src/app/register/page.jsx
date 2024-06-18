@@ -200,21 +200,13 @@ const Register = () => {
                                         Role:
                                     </h4>
                                 </div>
-                                <div className={styles.input}>
-                                    {/* <Field
-                                        className={styles.input}
-                                        id="role"
-                                        type="text"
-                                        name="role"
-                                        value={values.role}
-                                        onBlur={handleBlur}
-                                        placeholder="Enter your role"
-                                    /> */}
-                                    <Field as="select" name="role">
+                                <div className={styles.dropDown}>
+                                    <Field as="select" name="role" className={styles.dropDown}>
+
                                         <option value="DOCTOR">Doctor</option>
                                         <option value="PATIENT">Patient</option>
-                                    </Field>
 
+                                    </Field>
                                 </div>
                             </div>
                             <div className={styles.formField}>
@@ -235,12 +227,12 @@ const Register = () => {
                                     />
                                 </div>
                             </div>
-                            <div className={styles.formField}>
+                            {/* <div className={styles.formField}>
                                 <div className={styles.text}>
                                     <h4>
                                         Availaibility:
                                     </h4>
-                                </div>
+                                </div> */}
                                 {/* <div className={styles.input}>
                                     <Field
                                         className={styles.input}
@@ -252,7 +244,7 @@ const Register = () => {
                                         placeholder="Enter your role"
                                     />
                                 </div> */}
-                            </div>
+                            {/* </div> */}
                             {/* <div className={styles.formField}>
                                 <div className={styles.text}>
                                     <h4>
