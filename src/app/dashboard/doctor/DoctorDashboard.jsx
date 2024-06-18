@@ -1,35 +1,64 @@
 "use client";
 
-import React from 'react'
-import { Box, Text, Stack, IconButton } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
+import { getAllDoctor } from '@/app/api/api';
+import { Typography, Box } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
-const UserDashboard = () => {
+const DoctorDashboard = () => {
 
-    const theme = useTheme()
+    const [updater, setUpdater] = useState(null);
+    const [doctors, setDoctors] = useState([]);
+
+    const getAllDoctors = async () => {
+        const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+        console.log(parsedObj, 'pObj')
+        const token = JSON.parse(window.sessionStorage.getItem('token'));
+        console.log(token, 'token')
+
+
+        try {
+            const response = await fetch('https://3ef1-105-113-63-65.ngrok-free.app/api/v1/doctor', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            // .then((response) => response.json())
+            // .then((response) => {
+            //     console.log("data", response);
+            //     setDoctors(response);
+            // });
+            // const data = await response.json();
+            // console.log(data, 'data')
+            console.log(response, 'res')
+        } catch (err) {
+            console.log(err);
+        };
+
+    }
+    useEffect(() => {
+        getAllDoctors();
+    }, [updater]);
+
     return (
-        <>
-            <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 100 }}>
-                <Stack direction="column" alignItems={"center"} sx={{ width: '100%' }} spacing={2} >
-                    <Box sx={{
-                        backgroundColor: theme.palette.primary.main,
-                        height: 64,
-                        width: 64,
-                        borderRadius: 1.5
-                    }}>
-                    </Box>
-                    <Stack spacing={3}>
-                        {Nav_Buttons.map((el) => <IconButton key={el.index}>
-                            {el.icon}
-                        </IconButton>)}
-                    </Stack>
-                </Stack>
-            </Box>
-            <Outlet />
-        </>
+        <Box sx={{
+            width: '100%',
+            height: '90%',
+            backgroundColor: '#fff',
+            justifyContent: 'flexStart',
+            alignItems: 'center'
+        }}>
+            <Typography>
+                Doctor Dashboard
+            </Typography>
+
+        </Box>
     )
 }
 
-export default UserDashboard;
+export default DoctorDashboard;

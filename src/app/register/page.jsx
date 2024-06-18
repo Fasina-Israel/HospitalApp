@@ -46,7 +46,7 @@ const register = () => {
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await axios.post('https://1d14-102-88-69-152.ngrok-free.app/api/v1/auth/register', details, {
+            const response = await axios.post('https://3ef1-105-113-63-65.ngrok-free.app/api/v1/auth/register', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },
