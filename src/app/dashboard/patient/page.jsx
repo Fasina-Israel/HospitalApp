@@ -8,14 +8,14 @@ import { Nav_Buttons } from '../../data';
 import PatientOutlet from './PatientOutlet';
 
 const Page = () => {
-  useEffect(() => {
-    if (window) {
-      const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
-      console.log(parsedObj, 'pObj')
-      const token = JSON.parse(window.sessionStorage.getItem('token'));
-      console.log(token, 'token')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (window) {
+  //     const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+  //     console.log(parsedObj, 'pObj')
+  //     const token = JSON.parse(window.sessionStorage.getItem('token'));
+  //     console.log(token, 'token')
+  //   }
+  // }, [])
 
   const theme = useTheme()
 
