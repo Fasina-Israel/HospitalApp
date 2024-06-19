@@ -4,18 +4,17 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 // import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
-import DoctorDashbaord from './DoctorDashboard';
+import dynamic from "next/dynamic";
 
+const DoctorDashboard = dynamic(
+  () => {
+    return import("./DoctorDashboard");
+  },
+  { ssr: false }
+);
 const Page = () => {
 
-  // useEffect(() => {
-  //   if (window) {
-  //     const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
-  //     console.log(parsedObj, 'pObj')
-  //     const token = JSON.parse(window.sessionStorage.getItem('token'));
-  //     console.log(token, 'token')
-  //   }
-  // }, [])
+
   const theme = useTheme()
 
 
