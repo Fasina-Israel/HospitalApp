@@ -45,7 +45,7 @@ const Register = () => {
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await axios.post('https://3ef1-105-113-63-65.ngrok-free.app/api/v1/auth/register', details, {
+            const response = await axios.post('https://telemedicine-1axz.onrender.com/api/v1/auth/register', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },

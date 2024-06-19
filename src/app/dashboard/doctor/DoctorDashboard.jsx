@@ -16,7 +16,7 @@ const DoctorDashboard = () => {
 
 
         try {
-            const response = await fetch('https://3ef1-105-113-63-65.ngrok-free.app/api/v1/doctor', {
+            const response = await fetch('https://telemedicine-1axz.onrender.com/api/v1/doctor', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
