@@ -1,11 +1,10 @@
 'use client'
 import React from 'react';
-import Register from './register/page';
-
+import LandingPage from './landingPage/LandingPage';
 const Home = () => {
   return (
     <>
-      <Register />
+      <LandingPage />
     </>
 
 
