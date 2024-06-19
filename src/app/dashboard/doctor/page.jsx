@@ -4,10 +4,10 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 // import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
-import DoctorDashboard from './DoctorDashboard';
+// import DoctorDashboard from './DoctorDashboard';
 import { useRouter } from 'next/navigation'
 
-
+const DoctorDashbaord = dynamic(() => import('./DoctorDasboard'), { ssr: false })
 const Page = () => {
 
   const router = useRouter()
@@ -39,7 +39,7 @@ const Page = () => {
             </Box>
             {/* <Outlet /> */}
             <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 1400 }}>
-              <DoctorDashboard />
+              <DoctorDashbaord />
             </Box>
           </Box>
         </>
