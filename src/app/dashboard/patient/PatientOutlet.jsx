@@ -52,12 +52,12 @@ const PatientOutlet = () => {
         }}>
             <Box>
                 <Typography> Doctor Dashboard</Typography>
-                <DoctorProfileComponent name="Adeolu Moruf" speciality={"Gynecologist"} availabilty={" Monday "} />
+                {/* <DoctorProfileComponent name="Adeolu Moruf" speciality={"Gynecologist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Folusho Folabi" speciality={"Pharmacist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Henry Akan" speciality={"Surgeon"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Musa Kabiru" speciality={"Dentist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="John Oladeji" speciality={"Optician"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Fasina Israel" speciality={"Gynecologist"} availabilty={" Monday "} />
+                <DoctorProfileComponent name="Fasina Israel" speciality={"Gynecologist"} availabilty={" Monday "} /> */}
             </Box>
         </Box>
     )

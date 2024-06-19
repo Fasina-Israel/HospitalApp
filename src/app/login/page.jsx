@@ -22,7 +22,7 @@ const Login = () => {
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await axios.post('https://telemedicine-1axz.onrender.com/api/v1/auth/authenticate', details, {
+            const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/v1/auth/authenticate', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },);
