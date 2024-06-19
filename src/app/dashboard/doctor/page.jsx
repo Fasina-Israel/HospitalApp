@@ -4,6 +4,7 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 // import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
+import dynamic from 'next/dynamic';
 
 import { useRouter } from 'next/navigation'
 

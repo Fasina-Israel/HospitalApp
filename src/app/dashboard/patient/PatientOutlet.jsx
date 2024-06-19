@@ -1,7 +1,8 @@
+"use client"
 import { getAllDoctor } from '@/app/api/api';
 import { Typography, Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 
 const PatientOutlet = () => {
 
@@ -37,24 +38,24 @@ const PatientOutlet = () => {
         };
 
     }
-        useEffect(() => {
-            getAllDoctors();
-        }, [updater]);
-        return (
-            <Box sx={{
-                width: '100%',
-                height: '90%',
-                backgroundColor: '#fff',
-                justifyContent: 'flexStart',
-                alignItems: 'center'
-            }}>
-                <Typography>
-                    Patient Dashboard
-                </Typography>
+    useEffect(() => {
+        getAllDoctors();
+    }, [updater]);
+    return (
+        <Box sx={{
+            width: '100%',
+            height: '90%',
+            backgroundColor: '#fff',
+            justifyContent: 'flexStart',
+            alignItems: 'center'
+        }}>
+            <Typography>
+                Patient Dashboard
+            </Typography>
 
-            </Box>
-        )
-    
+        </Box>
+    )
+
 }
 
 export default PatientOutlet;
