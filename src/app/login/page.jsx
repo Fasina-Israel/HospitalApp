@@ -104,39 +104,43 @@ const Login = () => {
                             </div>
                             <form onSubmit={handleSubmit} className={styles.form}>
                                 <div className={styles.formField}>
-                                    <div className={styles.text}>
-                                        <h4>
-                                            Email:
-                                        </h4>
-                                    </div>
-                                    <div className={styles.input}>
-                                        <Field
-                                            className={styles.input}
-                                            id="email"
-                                            type="text"
-                                            name="email"
-                                            value={values.email}
-                                            onBlur={handleBlur}
-                                            placeholder="Enter your First name"
-                                        />
+                                    <div className={styles.formFieldContainer}>
+                                        <div className={styles.text}>
+                                            <h4>
+                                                Email:
+                                            </h4>
+                                        </div>
+                                        <div className={styles.input}>
+                                            <Field
+                                                className={styles.input_field}
+                                                id="email"
+                                                type="text"
+                                                name="email"
+                                                value={values.email}
+                                                onBlur={handleBlur}
+                                                placeholder="Enter your First name"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.formField}>
-                                    <div className={styles.text}>
-                                        <h4>
-                                            Password:
-                                        </h4>
-                                    </div>
-                                    <div className={styles.input}>
-                                        <Field
-                                            className={styles.input}
-                                            id="password"
-                                            type="text"
-                                            name="password"
-                                            value={values.password}
-                                            onBlur={handleBlur}
-                                            placeholder="Enter your First name"
-                                        />
+                                    <div className={styles.formFieldContainer}>
+                                        <div className={styles.text}>
+                                            <h4>
+                                                Password:
+                                            </h4>
+                                        </div>
+                                        <div className={styles.input}>
+                                            <Field
+                                                className={styles.input_field}
+                                                id="password"
+                                                type="text"
+                                                name="password"
+                                                value={values.password}
+                                                onBlur={handleBlur}
+                                                placeholder="Enter your First name"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.button}>

@@ -114,7 +114,7 @@ const Register = () => {
     >
         {({ isValid, values, errors, dirty, touched, handleSubmit, handleBlur }) => (
 
-            <div className={styles.container}>
+            <div className={styles.register_container}>
                 <div className={styles.container2}>
                     <div className={styles.formContainer}>
                         <div className={styles.header}>
@@ -130,7 +130,7 @@ const Register = () => {
                                 </div>
                                 <div className={styles.input}>
                                     <Field
-                                        className={styles.input}
+                                        className={styles.input_field}
                                         id="firstname"
                                         type="text"
                                         name="firstname"
@@ -148,7 +148,7 @@ const Register = () => {
                                 </div>
                                 <div className={styles.input}>
                                     <Field
-                                        className={styles.input}
+                                        className={styles.input_field}
                                         id="lastname"
                                         type="text"
                                         name="lastname"
@@ -166,7 +166,7 @@ const Register = () => {
                                 </div>
                                 <div className={styles.input}>
                                     <Field
-                                        className={styles.input}
+                                        className={styles.input_field}
                                         id="email"
                                         type="text"
                                         name="email"
@@ -184,7 +184,7 @@ const Register = () => {
                                 </div>
                                 <div className={styles.input}>
                                     <Field
-                                        className={styles.input}
+                                        className={styles.input_field}
                                         id="password"
                                         type="text"
                                         name="password"
@@ -217,7 +217,7 @@ const Register = () => {
                                 </div>
                                 <div className={styles.input}>
                                     <Field
-                                        className={styles.input}
+                                        className={styles.input_field}
                                         id="specialization"
                                         type="text"
                                         name="specialization"
@@ -233,7 +233,7 @@ const Register = () => {
                                         Availaibility:
                                     </h4>
                                 </div> */}
-                                {/* <div className={styles.input}>
+                            {/* <div className={styles.input}>
                                     <Field
                                         className={styles.input}
                                         id="availability"
