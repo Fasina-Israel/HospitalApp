@@ -7,9 +7,9 @@ import PatientProfileComponent from './../patient/PatientProfileComponent';
 const DoctorDashboard = ({ }) => {
 
     const [updater, setUpdater] = useState(null);
-    const [doctors, setDoctors] = useState([]);
+    const [patients, setPatients] = useState([]);
 
-    const getAllDoctors = async () => {
+    const getAllPatient = async () => {
         const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
         console.log(parsedObj, 'pObj')
         const token = JSON.parse(window.sessionStorage.getItem('token'));
@@ -17,28 +17,29 @@ const DoctorDashboard = ({ }) => {
 
 
         try {
-            const response = await fetch('https://telemedicine-1axz.onrender.com/api/v1/doctor', {
+            const response = await fetch('https://telemedicine-oiyv.onrender.com/patient', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
             })
-                .then((response) => response.json())
-                .then((response) => {
-                    console.log("data", response);
-                    setDoctors(response);
-                });
-            const data = await response.json();
-            console.log(data, 'data')
-            console.log(response, 'res')
+                .then(function (response) {
+                    // The response is a Response instance.
+                    // You parse the data into a useable format using `.json()`
+                    return response.json();
+                }).then(function (data) {
+                    // `data` is the parsed version of the JSON returned from the above endpoint.
+                    console.log(data);
+                    setPatients(data) // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+                })
         } catch (err) {
             console.log(err);
         };
 
     }
     useEffect(() => {
-        getAllDoctors();
+        getAllPatient();
     }, [updater]);
 
     return (
@@ -51,8 +52,12 @@ const DoctorDashboard = ({ }) => {
         }}>
             <Box>
                 <Typography> Doctor Dashboard</Typography>
-                <PatientProfileComponent />
 
+                {patients.map((item, index) => (
+                    <>
+                        <PatientProfileComponent name={item.name} phone={item.phone} email={item.email} />
+                    </>
+                ))}
             </Box>
         </Box>
     )

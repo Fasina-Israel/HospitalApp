@@ -1,7 +1,8 @@
+"use client"
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import { useRouter } from 'next/navigation';
+import Router from 'next/navigation'
 
 const DoctorProfileComponent = ({ name, speciality, availabilty }) => {
     const router = useRouter()
@@ -9,7 +10,7 @@ const DoctorProfileComponent = ({ name, speciality, availabilty }) => {
     return (
         <>
             <Box sx={{
-                width: '10rem',
+                width: '15rem',
                 height: '100%',
                 justifyContent: 'flex-start',
                 padding: '2%',
@@ -20,7 +21,7 @@ const DoctorProfileComponent = ({ name, speciality, availabilty }) => {
                 backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)',
             }}
                 onClick={() => {
-                    router.push('/dashboard/appointment');
+                   router.push('/dashboard/appointment')
                 }}
             >
 

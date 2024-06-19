@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './login.module.scss'
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation'
-import { Button, Box } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import { Formik, Field } from 'formik';
 // import validator from 'validator';
 import axios from 'axios';
@@ -170,6 +170,20 @@ const Login = () => {
                             {!loading && 'Create Account'} */}
                                         {'Submit'}
                                     </Button>
+                                    <div className={styles.footer}
+                                        onClick={() => {
+                                            router.push('/register');
+                                        }}>
+                                        <Typography sx={{
+                                            marginTop: '2rem',
+                                            color: '#2D6CDF',
+                                            fontSize: '16px',
+                                            fontWeight: '600'
+
+                                        }}>
+                                            Dont have an account? Sign Up
+                                        </Typography>
+                                    </div>
                                 </div>
 
                             </form>

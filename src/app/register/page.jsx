@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './register.module.scss'
 import { useState, useCallback } from 'react';
-import { Button, Box } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import { Formik, Field } from 'formik';
 // import validator from 'validator';
 import { useRouter } from 'next/navigation';
@@ -298,6 +298,7 @@ const Register = () => {
                         </div>
                     </div> */}
 
+
                             <div className={styles.button}>
                                 <Button
                                     type="submit"
@@ -317,22 +318,36 @@ const Register = () => {
                                             color: '#fff'
                                         }
                                     }}
-                                    // onClick={() => {
-                                    //     router.push('/login');
-                                    // }}
+                                // onClick={() => {
+                                //     router.push('/login');
+                                // }}
                                 >
                                     {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}
                             {!loading && 'Create Account'} */}
                                     {'Submit'}
                                 </Button>
+                                <div className={styles.footer}
+                                    onClick={() => {
+                                        router.push('/login');
+                                    }}>
+                                    <Typography sx={{
+                                        marginTop: '1rem',
+                                        color: '#2D6CDF',
+                                        fontSize: '16px',
+                                        fontWeight: '600'
 
+                                    }}>
+                                        Already have an account? Log in
+                                    </Typography>
+                                </div>
                             </div>
+
                         </form>
                     </div>
 
                 </div>
 
-            </div>
+            </div >
         )
         }
 

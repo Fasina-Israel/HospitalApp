@@ -1,6 +1,6 @@
 "use client"
 import { getAllDoctor } from '@/app/api/api';
-import { Typography, Box } from '@mui/material'
+import { Typography, Box, Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import DoctorProfileComponent from '../doctor/DoctorProfileComponent';
 // import axios from 'axios';
@@ -22,7 +22,7 @@ const PatientOutlet = () => {
 
 
         try {
-            fetch('https://telemedicine-oiyv.onrender.com/api/v1/doctor', {
+            fetch('https://telemedicine-oiyv.onrender.com/doctor', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,10 +31,15 @@ const PatientOutlet = () => {
             })
 
                 // .then((response) => response.json())
-                .then((response) => {
-                    console.log("data", response);
-                    setDoctors(response);
-                });
+                .then(function (response) {
+                    // The response is a Response instance.
+                    // You parse the data into a useable format using `.json()`
+                    return response.json();
+                }).then(function (data) {
+                    // `data` is the parsed version of the JSON returned from the above endpoint.
+                    console.log(data);
+                    setDoctors(data) // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+                })
         } catch (err) {
             console.log(err);
         };
@@ -53,12 +58,16 @@ const PatientOutlet = () => {
         }}>
             <Box>
                 <Typography> Doctor Dashboard</Typography>
-                <DoctorProfileComponent name="Adeolu Moruf" speciality={"Gynecologist"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Folusho Folabi" speciality={"Pharmacist"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Henry Akan" speciality={"Surgeon"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Musa Kabiru" speciality={"Dentist"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="John Oladeji" speciality={"Optician"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Fasina Israel" speciality={"Gynecologist"} availabilty={" Monday "} />
+
+                {doctors.map((item, index) => (
+                    // <Grid key={index} height="2rem" display="flex" >
+                    //     <Typography fontSize="16px" color="black">
+                    //         {item?.name}
+                    //     </Typography>
+                    // </Grid>
+                    <DoctorProfileComponent name={item.name} speciality={item.specialization
+                    } availabilty={'monday'} />
+                ))}
             </Box>
         </Box>
     )

@@ -2,12 +2,12 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 
-const PatientProfileComponent = ({ name, illness, gender }) => {
+const PatientProfileComponent = ({ name, phone, email }) => {
     const theme = useTheme()
     return (
         <>
             <Box sx={{
-                width: '10rem',
+                width: '15rem',
                 height: '100%',
                 justifyContent: 'flex-start',
                 padding: '2%',
@@ -35,10 +35,10 @@ const PatientProfileComponent = ({ name, illness, gender }) => {
                     gap: '0.5rem'
                 }}>
                     <Typography>
-                        Illness:
+                        Phone:
                     </Typography>
                     <Typography>
-                        {illness}
+                        {phone}
                     </Typography>
                 </Box>
                 <Box sx={{
@@ -47,10 +47,10 @@ const PatientProfileComponent = ({ name, illness, gender }) => {
                     gap: '0.5rem'
                 }}>
                     <Typography>
-                        Gender:
+                        Email:
                     </Typography>
                     <Typography>
-                        {gender}
+                        {email}
                     </Typography>
                 </Box>
 
