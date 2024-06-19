@@ -4,10 +4,10 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 // import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
-// import DoctorDashboard from './DoctorDashboard';
+
 import { useRouter } from 'next/navigation'
 
-const DoctorDashbaord = dynamic(() => import('./DoctorDasboard'), { ssr: false })
+const DoctorDashbaord = dynamic(() => import('./DoctorDashboard'), { ssr: false })
 const Page = () => {
 
   const router = useRouter()
