@@ -4,18 +4,16 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 // import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
-import dynamic from 'next/dynamic';
+import DoctorDashbAOrd from './DoctorDashboard';
 
-import { useRouter } from 'next/navigation'
-
-const DoctorDashbaord = dynamic(() => import('./DoctorDashboard'), { ssr: false })
 const Page = () => {
 
-  const router = useRouter()
-  const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
-  console.log(parsedObj, 'pObj')
-  const token = JSON.parse(window.sessionStorage.getItem('token'));
-  console.log(token, 'token')
+  if (typeof window !== 'undefined') {
+    const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+    console.log(parsedObj, 'pObj')
+    const token = JSON.parse(window.sessionStorage.getItem('token'));
+    console.log(token, 'token')
+  }
   const theme = useTheme()
   const loadPage = () => {
     if (token) {
@@ -46,14 +44,8 @@ const Page = () => {
         </>
       )
     }
-    else {
-      router.push('/login');
-    }
   }
-  useEffect(() => {
-    window.alert("window.alert from client component");
-    loadPage()
-  }, []);
 }
+
 
 export default Page;
