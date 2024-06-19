@@ -3,7 +3,7 @@ import React from 'react';
 import Dashboard from './PatientDashboard';
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const Page = () => {
   const router = useRouter()
   const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
   console.log(parsedObj, 'pObj')
@@ -21,4 +21,4 @@ const page = () => {
   }
 }
 
-export default page
+export default Page
