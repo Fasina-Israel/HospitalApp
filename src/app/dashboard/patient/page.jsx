@@ -6,10 +6,8 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
 import PatientOutlet from './PatientOutlet';
-import { useRouter } from 'next/navigation';
 
 const Page = () => {
-  const router = useRouter()
   if (typeof window !== 'undefined') {
     const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
     console.log(parsedObj, 'pObj')
