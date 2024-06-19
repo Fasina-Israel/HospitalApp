@@ -22,18 +22,19 @@ const PatientOutlet = () => {
 
 
         try {
-            // fetch('https://3ef1-105-113-63-65.ngrok-free.app/api/v1/auth/authenticate', {
-            //     method: "GET",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //         Authorization: `Bearer ${token}`,
-            //     },
-            // })
-            //     .then((response) => response.json())
-            //     .then((response) => {
-            //         console.log("data", response);
-            //         setDoctors(response);
-            //     });
+            fetch('https://telemedicine-oiyv.onrender.com/api/v1/doctor', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+
+                // .then((response) => response.json())
+                .then((response) => {
+                    console.log("data", response);
+                    setDoctors(response);
+                });
         } catch (err) {
             console.log(err);
         };
@@ -52,12 +53,12 @@ const PatientOutlet = () => {
         }}>
             <Box>
                 <Typography> Doctor Dashboard</Typography>
-                {/* <DoctorProfileComponent name="Adeolu Moruf" speciality={"Gynecologist"} availabilty={" Monday "} />
+                <DoctorProfileComponent name="Adeolu Moruf" speciality={"Gynecologist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Folusho Folabi" speciality={"Pharmacist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Henry Akan" speciality={"Surgeon"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="Musa Kabiru" speciality={"Dentist"} availabilty={" Monday "} />
                 <DoctorProfileComponent name="John Oladeji" speciality={"Optician"} availabilty={" Monday "} />
-                <DoctorProfileComponent name="Fasina Israel" speciality={"Gynecologist"} availabilty={" Monday "} /> */}
+                <DoctorProfileComponent name="Fasina Israel" speciality={"Gynecologist"} availabilty={" Monday "} />
             </Box>
         </Box>
     )

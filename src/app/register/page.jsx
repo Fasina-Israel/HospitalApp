@@ -17,6 +17,7 @@ const Register = () => {
     // };
     const router = useRouter();
     const [checked, setChecked] = useState(false);
+    const [isDoctor, setIsDoctor] = useState(false)
     // const handleTermsChange = () => {
     //     setChecked(!checked);
     // };
@@ -24,6 +25,11 @@ const Register = () => {
 
     const handleRoute = () => {
 
+    }
+
+    const handleDoctor = () => {
+        setIsDoctor(true);
+        console.log(isDoctor, 'isdoctor');
     }
 
     const submit = useCallback(async (values) => {
@@ -203,16 +209,19 @@ const Register = () => {
                                 <div className={styles.dropDown}>
                                     <Field as="select" name="role" className={styles.dropDown}>
 
-                                        <option value="DOCTOR">Doctor</option>
+                                        <option value="DOCTOR" onClick={() => {
+                                            handleDoctor();
+                                        }}>Doctor</option>
                                         <option value="PATIENT">Patient</option>
 
                                     </Field>
                                 </div>
                             </div>
+
                             <div className={styles.formField}>
                                 <div className={styles.text}>
                                     <h4>
-                                        Specialization:
+                                        Specialization(for doctors only):
                                     </h4>
                                 </div>
                                 <div className={styles.input}>
@@ -227,6 +236,7 @@ const Register = () => {
                                     />
                                 </div>
                             </div>
+
                             {/* <div className={styles.formField}>
                                 <div className={styles.text}>
                                     <h4>
@@ -307,9 +317,9 @@ const Register = () => {
                                             color: '#fff'
                                         }
                                     }}
-                                    onClick={() => {
-                                        router.push('/login');
-                                    }}
+                                    // onClick={() => {
+                                    //     router.push('/login');
+                                    // }}
                                 >
                                     {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}
                             {!loading && 'Create Account'} */}
