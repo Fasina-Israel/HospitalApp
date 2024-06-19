@@ -50,6 +50,7 @@ const Page = () => {
     }
   }
   useEffect(() => {
+    window.alert("window.alert from client component");
     loadPage()
   }, []);
 }
