@@ -17,40 +17,35 @@ const Page = () => {
   }
   const theme = useTheme()
 
-  if (token) {
-    return (
-      <>
-        <Box display={'flex'} flexDirection={'row'}>
-          <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 100 }}>
-            <Stack direction="column" alignItems={"center"} sx={{ width: '100%' }} spacing={2} >
-              <Box sx={{
-                backgroundColor: theme.palette.primary.main,
-                height: 64,
-                width: 64,
-                borderRadius: 1.5
-              }}>
-              </Box>
-              <Stack spacing={3}>
-                {Nav_Buttons.map((el) => <IconButton key={el.index}>
-                  {el.icon}
-                </IconButton>)}
-              </Stack>
+
+  return (
+    <>
+      <Box display={'flex'} flexDirection={'row'}>
+        <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 100 }}>
+          <Stack direction="column" alignItems={"center"} sx={{ width: '100%' }} spacing={2} >
+            <Box sx={{
+              backgroundColor: theme.palette.primary.main,
+              height: 64,
+              width: 64,
+              borderRadius: 1.5
+            }}>
+            </Box>
+            <Stack spacing={3}>
+              {Nav_Buttons.map((el) => <IconButton key={el.index}>
+                {el.icon}
+              </IconButton>)}
             </Stack>
-          </Box>
-          {/* <Outlet /> */}
-          <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 1400 }}>
-            <DoctorDashbaord />
-          </Box>
+          </Stack>
         </Box>
-      </>
-    )
-  }
-  else {
-    router.push('/login')
-  }
-
-
+        {/* <Outlet /> */}
+        <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 1400 }}>
+          <DoctorDashbaord />
+        </Box>
+      </Box>
+    </>
+  )
 }
+
 
 
 export default Page;
