@@ -7,10 +7,10 @@ const PatientOutlet = () => {
 
     const [updater, setUpdater] = useState(null);
     const [doctors, setDoctors] = useState([]);
-    // const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
-    // console.log(parsedObj, 'pObj')
-    // const token = JSON.parse(window.sessionStorage.getItem('token'));
-    // console.log(token, 'token')
+    const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+    console.log(parsedObj, 'pObj')
+    const token = JSON.parse(window.sessionStorage.getItem('token'));
+    console.log(token, 'token')
 
     const getAllDoctors = async () => {
         const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
