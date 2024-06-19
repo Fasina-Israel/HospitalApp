@@ -6,10 +6,10 @@ import { Box, Text, Stack, IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons } from '../../data';
 import PatientOutlet from './PatientOutlet';
+import { useRouter } from 'next/navigation';
 
-import PatientOutlet from './PatientOutlet';
 const Page = () => {
-
+  const router = useRouter()
   if (typeof window !== 'undefined') {
     const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
     console.log(parsedObj, 'pObj')
@@ -19,33 +19,37 @@ const Page = () => {
 
 
   const theme = useTheme()
-
-  return (
-    <>
-      <Box display={'flex'} flexDirection={'row'}>
-        <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 100 }}>
-          <Stack direction="column" alignItems={"center"} sx={{ width: '100%' }} spacing={2} >
-            <Box sx={{
-              backgroundColor: theme.palette.primary.main,
-              height: 64,
-              width: 64,
-              borderRadius: 1.5
-            }}>
-            </Box>
-            <Stack spacing={3}>
-              {Nav_Buttons.map((el) => <IconButton key={el.index}>
-                {el.icon}
-              </IconButton>)}
+  if (token) {
+    return (
+      <>
+        <Box display={'flex'} flexDirection={'row'}>
+          <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 100 }}>
+            <Stack direction="column" alignItems={"center"} sx={{ width: '100%' }} spacing={2} >
+              <Box sx={{
+                backgroundColor: theme.palette.primary.main,
+                height: 64,
+                width: 64,
+                borderRadius: 1.5
+              }}>
+              </Box>
+              <Stack spacing={3}>
+                {Nav_Buttons.map((el) => <IconButton key={el.index}>
+                  {el.icon}
+                </IconButton>)}
+              </Stack>
             </Stack>
-          </Stack>
+          </Box>
+          {/* <Outlet /> */}
+          <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 1400 }}>
+            <PatientOutlet />
+          </Box>
         </Box>
-        {/* <Outlet /> */}
-        <Box p={2} sx={{ backgroundColor: theme.palette.background.paper, boxShadow: '0px 0px 2px rgba(0,0,0,0.25)', height: '100vh', width: 1400 }}>
-          <PatientOutlet />
-        </Box>
-      </Box>
-    </>
-  )
+      </>
+    )
+  }
+  else {
+    router.push('/login')
+  }
 }
 
 export default Page;
