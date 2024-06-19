@@ -145,6 +145,9 @@ const Login = () => {
                                 </div>
                                 <div className={styles.button}>
                                     <Button
+                                        onClick={() => {
+                                            router.push('/dashboard/patient');
+                                        }}
                                         type="submit"
                                         variant="contained"
                                         // disabled={!isValid || !dirty || !checked}
@@ -168,7 +171,7 @@ const Login = () => {
                                         {'Submit'}
                                     </Button>
                                 </div>
-                                
+
                             </form>
                         </div>
                     </div>

@@ -1,9 +1,10 @@
 "use client";
 import { Typography, Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import PatientProfileComponent from './../patient/PatientProfileComponent';
 // import axios from 'axios';
 
-const DoctorDashboard = () => {
+const DoctorDashboard = ({ }) => {
 
     const [updater, setUpdater] = useState(null);
     const [doctors, setDoctors] = useState([]);
@@ -23,11 +24,11 @@ const DoctorDashboard = () => {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            .then((response) => response.json())
-            .then((response) => {
-                console.log("data", response);
-                setDoctors(response);
-            });
+                .then((response) => response.json())
+                .then((response) => {
+                    console.log("data", response);
+                    setDoctors(response);
+                });
             const data = await response.json();
             console.log(data, 'data')
             console.log(response, 'res')
@@ -48,10 +49,11 @@ const DoctorDashboard = () => {
             justifyContent: 'flexStart',
             alignItems: 'center'
         }}>
-            <Typography>
-                Doctor Dashboard
-            </Typography>
+            <Box>
+                <Typography> Doctor Dashboard</Typography>
+                <PatientProfileComponent />
 
+            </Box>
         </Box>
     )
 }

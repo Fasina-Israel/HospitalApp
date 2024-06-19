@@ -22,7 +22,7 @@ const Register = () => {
     // };
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit = () => {
+    const handleRoute = () => {
 
     }
 
@@ -306,6 +306,9 @@ const Register = () => {
                                             background: '#E4ECFB',
                                             color: '#fff'
                                         }
+                                    }}
+                                    onClick={() => {
+                                        router.push('/login');
                                     }}
                                 >
                                     {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}

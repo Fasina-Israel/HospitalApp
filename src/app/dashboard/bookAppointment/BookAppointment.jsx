@@ -203,8 +203,8 @@ const BookAppointment = () => {
                                 <div className={styles.dropDown}>
                                     <Field as="select" name="role" className={styles.dropDown}>
 
-                                        <option value="DOCTOR">Doctor</option>
-                                        <option value="PATIENT">Patient</option>
+                                        <option className={styles.dropDown} value="DOCTOR">Doctor</option>
+                                        <option className={styles.dropDown} value="PATIENT">Patient</option>
 
                                     </Field>
                                 </div>
