@@ -7,6 +7,8 @@ import { Button, Box, Typography } from '@mui/material';
 import { Formik, Field } from 'formik';
 // import validator from 'validator';
 import axios from 'axios';
+import { TailSpin } from 'react-loader-spinner';
+
 
 
 const Login = () => {
@@ -20,14 +22,14 @@ const Login = () => {
             password: values.password,
         };
         try {
-            // setLoading(true);
+            setLoading(true);
             console.log(details, 'details');
             const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/v1/auth/authenticate', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },);
             console.log(response, 'response');
-            setLoading(false);
+
             if (response.data.accessToken) {
                 console.log('token present')
                 const authObj = {
@@ -48,6 +50,7 @@ const Login = () => {
                 window.sessionStorage.setItem('token', JSON.stringify(token));
                 const auth = JSON.parse(window.sessionStorage.getItem('auth'));
                 console.log(auth, 'auth');
+                setLoading(false);
                 if (auth.roles === "DOCTOR") {
                     router.push('/dashboard/doctor');
                 } else if (auth.roles === "PATIENT") {
@@ -166,9 +169,9 @@ const Login = () => {
                                             }
                                         }}
                                     >
-                                        {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}
-                            {!loading && 'Create Account'} */}
-                                        {'Submit'}
+                                        {loading && <TailSpin color="#FFF" height={20} width={20} />}
+                                        {!loading && 'Login'}
+                                        {/* {'Submit'} */}
                                     </Button>
                                     <div className={styles.footer}
                                         onClick={() => {

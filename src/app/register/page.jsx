@@ -7,6 +7,7 @@ import { Formik, Field } from 'formik';
 // import validator from 'validator';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { TailSpin } from 'react-loader-spinner';
 
 
 const Register = () => {
@@ -237,68 +238,6 @@ const Register = () => {
                                 </div>
                             </div>
 
-                            {/* <div className={styles.formField}>
-                                <div className={styles.text}>
-                                    <h4>
-                                        Availaibility:
-                                    </h4>
-                                </div> */}
-                            {/* <div className={styles.input}>
-                                    <Field
-                                        className={styles.input}
-                                        id="availability"
-                                        type="text"
-                                        name="availability"
-                                        // value={values.availability.}
-                                        onBlur={handleBlur}
-                                        placeholder="Enter your role"
-                                    />
-                                </div> */}
-                            {/* </div> */}
-                            {/* <div className={styles.formField}>
-                                <div className={styles.text}>
-                                    <h4>
-                                        Role:
-                                    </h4>
-                                </div>
-                                <select
-
-                                    name="role"
-                                    value={values.role}
-                                    id="role"
-                                    // onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    className={styles.input}
-                                >
-                                    <option value="" label="Select a role">
-                                        Select your role{" "}
-                                    </option>
-                                    <option value="doctor" label="doctor">
-                                        {" "}
-                                        Doctor
-                                    </option>
-                                    <option value="patent" label="patent">
-                                        Patent
-                                    </option>
-
-                                    <option value="admin" label="admin">
-                                        Admin
-                                    </option>
-                                </select>
-                            </div> */}
-                            {/* <div className={styles.formField}>
-                        <div className={styles.text}>
-                            <h4>
-                                Specialization:
-                            </h4>
-                        </div>
-                        <div className={styles.input}>
-                            <input>
-                            </input>
-                        </div>
-                    </div> */}
-
-
                             <div className={styles.button}>
                                 <Button
                                     type="submit"
@@ -322,9 +261,9 @@ const Register = () => {
                                 //     router.push('/login');
                                 // }}
                                 >
-                                    {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}
-                            {!loading && 'Create Account'} */}
-                                    {'Submit'}
+                                    {loading && <TailSpin color="#FFF" height={20} width={20} />}
+                                    {!loading && 'Submit'}
+                                    {/* {'Submit'} */}
                                 </Button>
                                 <div className={styles.footer}
                                     onClick={() => {

@@ -1,0 +1,100 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/register/register.module.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.register_register_container__sbOcy {
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
+
+.register_container2___u4YP {
+  height: 90%;
+}
+
+.register_formContainer__5D7wE {
+  height: 100%;
+  width: 30vw;
+  background-color: #243fae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  padding: 0%;
+}
+
+.register_header__CoHdA {
+  width: 100%;
+  height: 10%;
+  margin-left: 20%;
+}
+.register_header__CoHdA h2 {
+  color: #fff;
+}
+
+.register_form__LOoXX {
+  width: 80%;
+  height: 90%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  gap: 2%;
+}
+
+.register_formField__fIpT_ {
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  height: 90%;
+  gap: 0%;
+}
+.register_formField__fIpT_ .register_text__HHF0F {
+  color: #fff;
+  width: 100%;
+  height: 50%;
+}
+.register_formField__fIpT_ h4 {
+  font-size: 14px;
+}
+.register_formField__fIpT_ h5 {
+  font-size: 12px;
+  color: "#fff";
+}
+.register_formField__fIpT_ .register_input__0tkK3 {
+  width: 100%;
+  height: 50%;
+}
+.register_formField__fIpT_ .register_input_field__bDmOz {
+  padding: 2%;
+  width: 95%;
+}
+.register_formField__fIpT_ .register_dropDown__vAXy9 {
+  width: 100%;
+  height: 100%;
+}
+.register_formField__fIpT_ .register_select___rw9e {
+  width: 180px;
+}
+
+.register_footer__tpjs2 {
+  height: 5%;
+  cursor: pointer;
+  margin-top: 0%;
+}
+
+.register_button__ukWjw {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 3%;
+  flex-direction: column;
+}

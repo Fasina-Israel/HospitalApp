@@ -1,0 +1,8 @@
+{
+  "app/dashboard/patient/page.jsx -> ./PatientOutlet": {
+    "id": "app/dashboard/patient/page.jsx -> ./PatientOutlet",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_dashboard_patient_PatientOutlet_jsx.js"
+    ]
+  }
+}
