@@ -38,7 +38,7 @@ const Appointments = () => {
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/appointments/1', details, {
+            const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/appointments/3', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },

@@ -57,7 +57,8 @@ const PatientOutlet = () => {
             alignItems: 'center'
         }}>
             <Box>
-                <Typography> Doctor Dashboard</Typography>
+                <Typography> Patient Dashboard</Typography>
+                <Typography> Please select any of the doctor below to book an appointment</Typography>
 
                 {doctors.map((item, index) => (
                     // <Grid key={index} height="2rem" display="flex" >

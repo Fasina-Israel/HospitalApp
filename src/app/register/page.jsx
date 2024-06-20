@@ -19,14 +19,11 @@ const Register = () => {
     const router = useRouter();
     const [checked, setChecked] = useState(false);
     const [isDoctor, setIsDoctor] = useState(false)
-    // const handleTermsChange = () => {
-    //     setChecked(!checked);
-    // };
+   
+  
     const [loading, setLoading] = useState(false);
 
-    const handleRoute = () => {
-
-    }
+   
 
     const handleDoctor = () => {
         setIsDoctor(true);
@@ -43,12 +40,7 @@ const Register = () => {
             specialization: values.specialization,
             mfaEnabled: values.mfaEnabled,
             availability: values.availability
-
-
-
         };
-
-
         try {
             setLoading(true);
             console.log(details, 'details');
@@ -56,7 +48,6 @@ const Register = () => {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },
-
             );
             console.log(response, 'response');
             setLoading(false);

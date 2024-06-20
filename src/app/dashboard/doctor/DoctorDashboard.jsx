@@ -1,5 +1,5 @@
 "use client";
-import { Typography, Box } from '@mui/material'
+import { Typography, Box, Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import PatientProfileComponent from './../patient/PatientProfileComponent';
 // import axios from 'axios';

@@ -68,7 +68,7 @@ const Login = () => {
         } catch (err) {
             console.log(err, 'err');
             // notify(err.message, true);
-            // setLoading(false);
+            setLoading(false);
         }
     }, [router]);
 
