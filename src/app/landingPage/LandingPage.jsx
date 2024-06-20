@@ -32,7 +32,7 @@ const LandingPage = () => {
                     color: '#fff',
 
                 }}>
-                    Welcome To Health Care
+                    Welcome To Telemedicine
                 </Typography>
             </Box>
             <Box sx={{

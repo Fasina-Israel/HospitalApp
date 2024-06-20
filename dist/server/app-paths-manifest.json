@@ -1,4 +1,4 @@
 {
-  "/dashboard/patient/page": "app/dashboard/patient/page.js",
-  "/dashboard/appointment/page": "app/dashboard/appointment/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboard/bookAppointment/page": "app/dashboard/bookAppointment/page.js"
 }

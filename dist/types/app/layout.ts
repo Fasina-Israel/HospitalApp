@@ -1,4 +1,4 @@
-// File: /home/geediegram/Downloads/hackaton-web/src/app/layout.js
+// File: /home/geediegram/Downloads/telemedicine/HospitalApp/src/app/layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

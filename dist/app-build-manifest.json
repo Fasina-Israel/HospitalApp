@@ -1,19 +1,20 @@
 {
   "pages": {
-    "/dashboard/patient/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/patient/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/dashboard/appointment/page": [
+    "/dashboard/bookAppointment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/appointment/page.js"
+      "static/css/app/dashboard/bookAppointment/page.css",
+      "static/chunks/app/dashboard/bookAppointment/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
