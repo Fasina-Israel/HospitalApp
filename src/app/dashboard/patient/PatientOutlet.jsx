@@ -65,8 +65,10 @@ const PatientOutlet = () => {
                     //         {item?.name}
                     //     </Typography>
                     // </Grid>
-                    <DoctorProfileComponent name={item.name} speciality={item.specialization
-                    } availabilty={'monday'} />
+                    <Grid key={index}>
+                        <DoctorProfileComponent name={item.name} speciality={item.specialization
+                        } availabilty={'monday'} />
+                    </Grid>
                 ))}
             </Box>
         </Box>

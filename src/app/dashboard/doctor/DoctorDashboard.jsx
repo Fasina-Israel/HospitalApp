@@ -54,9 +54,9 @@ const DoctorDashboard = ({ }) => {
                 <Typography> Doctor Dashboard</Typography>
 
                 {patients.map((item, index) => (
-                    <>
+                    <Grid key={index}>
                         <PatientProfileComponent name={item.name} phone={item.phone} email={item.email} />
-                    </>
+                    </Grid>
                 ))}
             </Box>
         </Box>
