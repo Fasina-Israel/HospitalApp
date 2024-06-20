@@ -1,9 +1,10 @@
 {
   "pages": {
-    "/page": [
+    "/dashboard/bookAppointment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/dashboard/bookAppointment/page.css",
+      "static/chunks/app/dashboard/bookAppointment/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,27 +17,15 @@
       "static/css/app/login/page.css",
       "static/chunks/app/login/page.js"
     ],
-    "/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/register/page.css",
-      "static/chunks/app/register/page.js"
-    ],
-    "/dashboard/doctor/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/doctor/page.js"
-    ],
     "/dashboard/patient/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/patient/page.js"
     ],
-    "/dashboard/bookAppointment/page": [
+    "/dashboard/doctor/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/dashboard/bookAppointment/page.css",
-      "static/chunks/app/dashboard/bookAppointment/page.js"
+      "static/chunks/app/dashboard/doctor/page.js"
     ]
   }
 }

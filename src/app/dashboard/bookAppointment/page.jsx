@@ -8,6 +8,7 @@ import { Formik, Field } from 'formik';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
+import { TailSpin } from 'react-loader-spinner';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -22,6 +23,10 @@ const Appointments = () => {
     // const handleTermsChange = () => {
     //     setChecked(!checked);
     // };
+    const parsedObj = JSON.parse(window.sessionStorage.getItem('auth'));
+    console.log(parsedObj, 'pObj')
+    const token = JSON.parse(window.sessionStorage.getItem('token'));
+    console.log(token, 'token')
     const [loading, setLoading] = useState(false);
 
     const handleRoute = () => {
@@ -30,15 +35,17 @@ const Appointments = () => {
 
     const submit = useCallback(async (values) => {
         const details = {
-            appointmentDate: values.appointmentDate,
-            urgency: values.urgency,
-            telemedicine: values.telemedicine
+            appointmentDate: '',
+            // urgency: values.urgency,
+            telemedicine: values.telemedicine,
+            patientId: parsedObj.id,
+            doctorId: 402
         };
         console.log('submit')
         try {
             setLoading(true);
             console.log(details, 'details');
-            const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/appointments/3', details, {
+            const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/appointments', details, {
                 "Content-Type": "application/json",
                 // withCredentials: false
             },
@@ -56,7 +63,7 @@ const Appointments = () => {
         } catch (err) {
             console.log(err, 'err');
             // notify(err.message, true);
-            // setLoading(false);
+            setLoading(false);
         }
     }, [router]);
 
@@ -154,9 +161,9 @@ const Appointments = () => {
                                     }}
 
                                 >
-                                    {/* {loading && <TailSpin color="#FFF" height={20} width={20} />}
-                            {!loading && 'Create Account'} */}
-                                    {'Submit'}
+                                    {loading && <TailSpin color="#FFF" height={20} width={20} />}
+                                    {!loading && 'Submit'}
+                                   
                                 </Button>
 
                             </div>

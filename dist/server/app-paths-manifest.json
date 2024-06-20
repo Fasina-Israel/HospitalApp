@@ -1,7 +1,6 @@
 {
+  "/dashboard/bookAppointment/page": "app/dashboard/bookAppointment/page.js",
   "/login/page": "app/login/page.js",
-  "/register/page": "app/register/page.js",
-  "/dashboard/doctor/page": "app/dashboard/doctor/page.js",
   "/dashboard/patient/page": "app/dashboard/patient/page.js",
-  "/dashboard/bookAppointment/page": "app/dashboard/bookAppointment/page.js"
+  "/dashboard/doctor/page": "app/dashboard/doctor/page.js"
 }
