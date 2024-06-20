@@ -20,7 +20,7 @@ const Login = () => {
             password: values.password,
         };
         try {
-            setLoading(true);
+            // setLoading(true);
             console.log(details, 'details');
             const response = await axios.post('https://telemedicine-oiyv.onrender.com/api/v1/auth/authenticate', details, {
                 "Content-Type": "application/json",
