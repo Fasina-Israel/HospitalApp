@@ -71,7 +71,7 @@ const Register = () => {
             // notify(err.message, true);
             // setLoading(false);
         }
-    }, []);
+    }, [router]);
 
     return (<Formik
         initialValues={{

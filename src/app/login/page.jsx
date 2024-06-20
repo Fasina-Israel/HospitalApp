@@ -67,7 +67,7 @@ const Login = () => {
             // notify(err.message, true);
             // setLoading(false);
         }
-    }, []);
+    }, [router]);
 
     return (
         <Formik
