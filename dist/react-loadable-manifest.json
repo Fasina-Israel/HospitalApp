@@ -1,14 +1,1 @@
-{
-  "app/dashboard/doctor/page.jsx -> ./DoctorDashboard": {
-    "id": "app/dashboard/doctor/page.jsx -> ./DoctorDashboard",
-    "files": [
-      "static/chunks/_app-pages-browser_src_app_dashboard_doctor_DoctorDashboard_jsx.js"
-    ]
-  },
-  "app/dashboard/patient/page.jsx -> ./PatientOutlet": {
-    "id": "app/dashboard/patient/page.jsx -> ./PatientOutlet",
-    "files": [
-      "static/chunks/_app-pages-browser_src_app_dashboard_patient_PatientOutlet_jsx.js"
-    ]
-  }
-}
+{}

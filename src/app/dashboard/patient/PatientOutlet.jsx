@@ -68,7 +68,7 @@ const PatientOutlet = () => {
                     // </Grid>
                     <Grid key={index}>
                         <DoctorProfileComponent name={item.name} speciality={item.specialization
-                        } availabilty={'monday'} />
+                        } availabilty={''} />
                     </Grid>
                 ))}
             </Box>
